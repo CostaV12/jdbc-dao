@@ -49,5 +49,12 @@ public class Main {
         updateSeller.setName("Vinicius Costa dos Santos");
         sellerDao.update(updateSeller);
         System.out.println("Updated seller");
+
+        System.out.println();
+
+        System.out.println("----- TESTE delete: -----");
+
+        sellerDao.deleteById(4);
+        System.out.println("Deleted seller");
     }
 }
