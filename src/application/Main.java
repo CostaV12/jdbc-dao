@@ -14,12 +14,12 @@ public class Main {
 
         Seller seller = sellerDao.findById(3);
 
-        System.out.println("----- TESTE FindByID: -----");
+        System.out.println("----- TESTE findByID: -----");
         System.out.println(seller);
 
         System.out.println();
 
-        System.out.println("----- TESTE FindByDepartment: -----");
+        System.out.println("----- TESTE findByDepartment: -----");
         List<Seller> sellers = sellerDao.findByDepartment(2);
         for (Seller seller1 : sellers) {
             System.out.println(seller1);
@@ -27,10 +27,18 @@ public class Main {
 
         System.out.println();
 
-        System.out.println("----- TESTE FindAll: -----");
+        System.out.println("----- TESTE findAll: -----");
         sellers = sellerDao.findAll();
         for (Seller seller1 : sellers) {
             System.out.println(seller1);
         }
+
+        System.out.println();
+
+        System.out.println("----- TESTE insert: -----");
+
+        Seller newSeller = new Seller(null, "Greg", "greg@gmail.com", LocalDate.now(), 4000.0, new Department(2, null));
+        sellerDao.insert(newSeller);
+        System.out.println("New Seller, id = " + newSeller.getId());
     }
 }
